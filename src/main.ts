@@ -4,6 +4,10 @@ import { HttpStatus, ValidationPipe, VersioningType } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // enable cors
+  app.enableCors({
+    origin: '*',
+  });
   // global prefix
   app.setGlobalPrefix('api'); // localhost:4000/api (ทุก route)
   // api versioning
